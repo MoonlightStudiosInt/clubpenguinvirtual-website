@@ -1,0 +1,353 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+String.prototype.trim = function(){
+    return this.replace(/^\s+|\s+$/g, "");
+};
+
+if(typeof CP === 'undefined') {
+	CP = {};
+}
+CP.runningVars = {
+	layoutDirty : true,
+	isTouchDevice : false,
+	cleanWidth : 0,
+	firstLoad: true,
+	langDir: ""
+};
+
+(function($){
+	
+	CP.agegate = function(isGated, cutoffYear, langDir) {
+		CP.runningVars.cutoffYear = cutoffYear;
+		CP.runningVars.isGated = isGated;
+		CP.runningVars.langDir = langDir;
+		$.extend(true, this.options, {});
+		this.load();
+	};
+	
+
+	CP.agegate.prototype.initListeners = function() {
+		var self = this;
+		var htmltext = "";
+		var hideContinue = false;
+		
+		//agegate -- Gated Link Pressed
+		$('.agegated-link').mousedown(function(){
+			CP.runningVars.pendingUrl = $(this).attr("href");
+			CP.runningVars.interstitialText = $(this).attr("rel");
+			if (typeof CP.runningVars.interstitialText == 'undefined') {
+				CP.runningVars.interstitialText = false;
+			}
+
+			CP.runningVars.visitorAge = getCookie ('cpvisitor-yob') || null;
+			if (!CP.runningVars.isGated || (CP.runningVars.visitorAge != null && parseInt(CP.runningVars.visitorAge) <= CP.runningVars.cutoffYear)) {
+				//show interstitial
+				self.showAgegate(function(){
+					$('#agegate .question').hide();
+					$('#agegate .sorry').hide();
+					if (CP.runningVars.interstitialText) {
+						htmltext = CP.runningVars.interstitialText.split("|");
+						if (htmltext.length >= 2) {
+							$('#agegate h3.interstitial').html(htmltext[0]);
+							$('#agegate #interstitial').html(htmltext[1]);
+							//custom text for cancel button
+							if (htmltext.length >= 3) {
+								$('#agegate #cancel').html(htmltext[2]);
+							}
+							//custom text for ok button
+							if (htmltext.length >= 4) {
+								if (htmltext[3] == 'hide') {
+									hideContinue = true;
+								} else {
+									$('#agegate #continue').html(htmltext[3]);
+								}
+							}
+						}
+					}
+					$('#agegate .interstitial').show();
+					$('#agegate #cancel').show();
+					if (hideContinue) {
+						$('#agegate #continue').hide();
+					} else {
+						$('#agegate #continue').show();
+					}
+					$('#agegate #submit').hide();
+				});
+				return false;
+			} else {
+				//show age gate question
+				self.showAgegate(function(){
+					$('#agegate .question').show();
+					$('#agegate .sorry').hide();
+					$('#agegate .interstitial').hide();
+					$('#agegate #cancel').hide();
+					$('#agegate #continue').hide();
+					$('#agegate #submit').show();
+				});
+				return false;
+			}
+		}).click(function(){return false});
+		
+		/*$('.interstitial-link').mousedown(function(){
+			CP.runningVars.visitorAge = getCookie ('cpvisitor-yob') || null;
+			if (CP.runningVars.visitorAge != null && parseInt(CP.runningVars.visitorAge) < '1999') {
+				window.location.href = $(this).text();
+				
+			} else if (CP.runningVars.visitorAge != null && parseInt(CP.runningVars.visitorAge) > '1999') {
+				
+				self.showAgegate(function(){
+					$('#agegate #result').show();
+						$('#selected-values,#selectboxes').hide();
+						$('#agegate #back').show();
+						$('#agegate #submit').hide();
+				});
+				return false;
+			} else {
+				//open lightbox
+				CP.runningVars.pendingUrl = $(this).text();
+				self.showAgegate();
+				return false;
+			}
+		}).click(function(){return false});*/
+
+		
+		// Date select boxes
+		$('#agegate .selected-value').live('click', function(e) {
+			var index = $('.selected-value').index(this);
+			
+			$($('#selectboxes > div')[index]).toggle();
+			if ($($('#selectboxes > div')[index]).is(':visible')){
+				$(this).css({'background-position':'-4px -42px'});
+			} else {
+				$(this).css({'background-position':'top center'});
+				
+			}
+		});
+		
+		
+		$('#agegate .selected-value').live('mouseover', function(e) {
+			var index = $('.selected-value').index(this);
+			var delay = 1500;
+			if (index == 2) {
+				delay = 3000;
+			}
+			if ($($('#selectboxes > div')[index]).is(':visible')){
+				$($('#selectboxes > div')[index]).find('ul').animate({'scrollTop': 0 + 'px'},delay);
+				
+			}
+		});
+		
+		
+		$('#agegate .selected-value').live('mouseout', function(e) {
+			var index = $('.selected-value').index(this);
+			if ($($('#selectboxes > div')[index]).is(':visible')){
+				$($('#selectboxes > div')[index]).find('ul').stop();
+			} 
+		});
+				
+		$('#agegate #selectboxes ul li').live('click', function(){
+			var selected = ($(this).text());
+			var sel = '#selected-' + $(this).parent().attr('id');
+			var sel2 = '#' + $(this).parent().attr('id') + '-container';
+			$(sel).html(selected);
+			$(sel).css({'background-position':'top center'});
+			
+			$(sel2).toggle();
+		});
+		
+		$('#agegate .hotspot').live('mouseover', function(){
+			var index = $('.hotspot').index(this);
+			var delay = 2000;
+			if (index == 2) {
+				delay = 6000;
+			}
+			var scrollVal = $($('#selectboxes > div')[index]).find('ul').scrollTop();
+			var ul = $($('#selectboxes > div')[index]).find('ul li');
+			var height = (ul.length * 20);
+			$($('#selectboxes > div')[index]).find('ul').animate({'scrollTop': height + 'px'},delay);
+		})
+		
+		$('#agegate .hotspot').live('mouseout', function(){
+			var index = $('.hotspot').index(this);
+			$($('#selectboxes > div')[index]).find('ul').stop();
+		});
+		
+		// Age gate -- submit date
+		$('#agegate #submit').live('click', function(){
+			var month = $('#agegate #selected-month').text();
+			var day = $('#agegate #selected-day').text()
+			var year = $('#agegate #selected-year').text()
+			if ($("ul#month li:contains("+month+")").length ==  0 || $("ul#day li:contains("+day+")").length == 0 || $("ul#year li:contains("+year+")").length == 0) {
+				$('#agegate h3').css({'color':'#f00'});
+			} else {
+				$('#agegate h3').css({'color':'#fff'});
+				//write cookie
+				setCookie('cpvisitor-yob', year, null);
+				if (parseInt(year) < parseInt(CP.runningVars.cutoffYear)) {
+					$('#agegate .question').fadeOut(200, function(){
+						if (CP.runningVars.interstitialText) {
+							htmltext = CP.runningVars.interstitialText.split("|");
+							if (htmltext.length >= 2) {
+								$('#agegate h3.interstitial').html(htmltext[0]);
+								$('#agegate #interstitial').html(htmltext[1]);
+							}
+							//custom text for cancel button
+							if (htmltext.length >= 3) {
+								$('#agegate #cancel').html(htmltext[2]);
+							}
+							//custom text for ok button
+							if (htmltext.length >= 4) {
+								$('#agegate #continue').html(htmltext[3]);
+							}
+						}
+						$('#agegate .interstitial').fadeIn(200);
+						$('#agegate #submit').hide();
+						$('#agegate #cancel').show();
+						$('#agegate #continue').show();
+					});
+					
+				} else {
+					$('#agegate .question').fadeOut(200, function(){
+						$('#agegate .sorry').fadeIn(200);
+						$('#agegate #submit').hide();
+						$('#agegate #cancel').show();
+					});
+				}
+			}
+		});
+		
+		// Age gate -- insterstitial answers
+		$('#agegate #continue').live('click', function(){
+			window.location.href = CP.runningVars.pendingUrl;
+		});
+		
+		$('#agegate #cancel').live('click', function(){
+			CP.runningVars.modal.close();
+		});
+	};
+
+	CP.agegate.prototype.initModal = function() {
+		$("#modal-overlay").remove();
+		$("#modal-loading").remove();
+		$("#modal-window").remove();
+		
+		CP.runningVars.modal = new CP.utils.Modal({
+			showClose: true,
+			contentCloseDelegate: '.modal-close',
+			onOpenComplete: function() {},
+			onCloseComplete: function() {},
+			onCloseStart: function() {},
+			onOpenStart: function() {}
+		});
+	};
+
+	CP.agegate.prototype.showAgegate = function(openCallback, closeCallback) {
+	  var url = window.location.protocol + "//" +  window.location.host + CP.runningVars.langDir + "/geoip/agegate-overlay";
+		$('#modal-content').load(url + ' #agegate-wrap', function(){
+		  //open modal
+		  if (!closeCallback) closeCallback= null;
+			if (!openCallback) openCallback= null;
+			CP.runningVars.modal.open('', openCallback, closeCallback);
+	  });
+	};
+	
+	CP.agegate.prototype.load = function() {
+		var self = this;
+		CP.runningVars.visitorAge = getCookie('cpvisitor-yob') || null;
+		this.initListeners();
+		this.initModal();
+	
+		if (window.PIE) {
+		       $('.base a.button, .menu li a').each(function() {
+			    PIE.detach(this);
+	            PIE.attach(this);
+	        });
+	    }
+		try{
+			imgSizer.collate();	
+		}catch(e){}
+		CP.runningVars.firstLoad = false;
+	};
+	
+})(window.jQuery);
+
+window.jQuery(document).ready(function(){
+    var isGated;
+    var cutoffYear;
+    
+    //Check if we've already looked up the agegate info?
+    isGated = getCookie ('cpvisitor-agig') || 'lookup';
+    cutoffYear = getCookie ('cpvisitor-agcoy') || 'lookup';
+    
+    if (isGated == 'lookup') {
+      var request = jQuery.ajax({
+        type: "POST",
+        url: window.location.protocol + "//" +  window.location.host + "/geoip/agegate",
+        data: '{}',
+        async: false,
+        success: function(result) {
+          isGated = result.required;
+          cutoffYear = result.cutoffYear;
+        }
+      });
+      if (isGated == 'lookup') {
+        //default to not showing agegate if ajax call failed.
+        isGated = false;
+        cutoffYear = 2000;
+      } else {
+        //only set the cookies if the values were actually determined
+        setCookie('cpvisitor-agcoy', cutoffYear, null);
+        setCookie('cpvisitor-agig', isGated, null);
+      }
+    }
+    
+    var lang = document.documentElement.lang
+    var langDir = "";
+    switch (lang) {
+      case "de": langDir = "/de"; break;
+      case "es": langDir = "/es"; break;
+      case "fr": langDir = "/fr"; break;
+      case "pt": langDir = "/pt"; break;
+      case "en": 
+      default : langDir = ""; break;
+    }
+
+    if (isGated == "false") isGated = false;
+    if (isGated == "true") isGated = true;
+    cutoffYear = parseInt(cutoffYear);
+    var agegate = new CP.agegate(isGated, cutoffYear, langDir);
+});
+
+
+}
+/*
+     FILE ARCHIVED ON 23:02:01 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:42:59 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  RedisCDXSource: 18.396
+  PetaboxLoader3.datanode: 2241.363 (4)
+  PetaboxLoader3.resolve: 71.959
+  LoadShardBlock: 2337.419 (3)
+  captures_list: 2391.577
+  esindex: 0.014
+  exclusion.robots.policy: 0.188
+  CDXLines.iter: 30.386 (3)
+  load_resource: 136.588
+  exclusion.robots: 0.204
+*/

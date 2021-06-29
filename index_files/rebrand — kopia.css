@@ -1,0 +1,864 @@
+body {
+	font-family:"Myriad Web Pro", Arial, Verdana !important;
+	background:#195c96 url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/bg-landscape-hollywood.jpg) 50% 50% no-repeat;
+	margin:0;
+	padding:0;
+}
+
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+
+a img {
+	border:none;
+}
+
+#wrapper {
+	min-width:980px;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+#masthead {
+	width:979px;
+	margin:0 auto;
+	padding:0;
+	position:relative;
+	z-index: 2;
+}
+
+#logo {
+	display:block;
+	width:145px;
+	height:70px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/cp-logo.png) -5px -15px no-repeat;
+	text-indent:-9999px;
+	line-height:0;
+	position:absolute;
+	top:0;
+	left:15px;
+}
+
+#logo:hover {
+	background-position: -5px -115px;
+}
+
+#nav {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/top-nav.png) -3px 0 no-repeat;
+	width:980px;
+	height:85px;
+	padding:0;
+	margin:0;
+}
+
+#nav ul {
+	padding:0;
+	margin:0;
+	width:900px;
+	height:30px;
+	position:absolute;
+	width: 585px;
+	top:25px;
+	left: 150px;
+}
+
+#nav ul li {
+	display:inline;
+	margin: 0 5px 0 5px;
+	float:left;
+	position:relative;
+	color:#fff;
+	font-weight:bold;
+	margin-right:2px;
+}
+
+.pt #nav ul li {
+	margin:0 3px 0 0;
+}
+
+#nav ul li a {
+	color:#fff;
+	display:block;
+	padding:5px 4px;
+	font-size:15px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+.pt #nav ul li a {
+	padding: 5px 4px;
+}
+
+#nav ul li a:hover {
+	background:#0370cb;
+	text-decoration: none;
+}
+
+#play-now {
+	display:block;
+	position:absolute;
+	top:10px;
+	right:18px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/play-now-sprite.png) 0 0 no-repeat;
+	width:190px;
+	height:60px;
+	overflow:hidden;
+	text-indent:-99999px;
+	line-height:0;
+}
+
+.de #play-now {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/play-now-sprite.png) 0 0 no-repeat;
+}
+
+.es #play-now {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/play-now-sprite.png) 0 0 no-repeat;
+}
+
+.fr #play-now {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/play-now-sprite.png) 0 0 no-repeat;
+}
+
+.pt #play-now {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/play-now-sprite.png) 0 0 no-repeat;
+}
+
+#play-now:hover {
+	background-position: 0 -60px;
+}
+
+#w980 {
+	width:979px;
+	margin:0 auto;
+	/*background:#fff;*/
+	overflow:hidden;
+	-moz-box-shadow: 0 -5px 80px 1px #011f41;
+	-webkit-box-shadow: 0px -5px 80px 1px #011f41;
+	box-shadow: 0px -5px 80px 1px #011f41;
+	position:relative;
+	margin-top:-35px;
+	z-index: 1;
+}
+
+#billboards-holder {
+	width:980px;
+	height:600px;
+	margin-top:-20px;
+	position:relative;
+}
+
+#billboards {
+	position:absolute;
+	width:980px;
+	height:600px;
+	top:20px;
+	left:0;
+}
+
+#scene {
+	display:block;
+	width:980px;
+	height:550px;
+	position:absolute;
+	top:30px;  /* for swf version */
+	top: 20px; /*for static image version */
+	left:0;
+}
+#scene h1 {
+  margin: 0;
+}
+
+#billboard-nav {
+	width:980px;
+	height:75px;
+	margin-top:-55px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/billboard-nav.png)  0px 0 no-repeat;
+	position:relative;
+}
+
+#billboard-nav #indicators {
+	width:200px;
+	height:40px;
+	position:absolute;
+	left:20px;
+	top: 32px;
+}
+
+#billboard-nav .indicator a{
+	width:30px;
+	height:34px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/sprite-bb-indicator.png) 0 0 no-repeat;
+	float:left;
+	font-weight:bold;
+	color:#fff;
+	line-height:36px;
+	padding-left:2px;
+	text-align:center;
+	margin-right:5px;
+}
+
+#billboard-nav .indicator a.active {
+	background-position: 0 -34px;
+	color:#0052af;
+}
+
+#billboard-nav .indicator a:hover {
+	background-position: 0 -68px;
+	color:#fff;
+	text-decoration: none;
+}
+
+#buy-membership {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/membership-button-sprite.png) top left no-repeat;
+	width:360px;
+	height:90px;
+	display:block;
+	float:right;
+	margin-right:10px;
+	text-indent:-9999px;
+	line-height:0;
+	margin-top:-20px;
+}
+
+.de #buy-membership {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/membership-button-sprite.png) top left no-repeat;
+}
+
+.es #buy-membership {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/membership-button-sprite.png) top left no-repeat;
+}
+
+.fr #buy-membership {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/membership-button-sprite.png) top left no-repeat;
+}
+
+.pt #buy-membership {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/membership-button-sprite.png) top left no-repeat;
+}
+
+#buy-membership:hover {
+	background-position:0 -90px;
+}
+
+.redeem-code {
+	position: absolute;
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/redeem-code-button-sprite.png) top left no-repeat;
+	width:200px;
+	height:29px;
+	display:block;
+	text-indent: -9999px;
+	margin-top: 7px;
+}
+
+.de .redeem-code {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/redeem-code-button-sprite.png) top left no-repeat;
+}
+
+.es .redeem-code {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/redeem-code-button-sprite.png) top left no-repeat;
+}
+
+.fr .redeem-code {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/redeem-code-button-sprite.png) top left no-repeat;
+}
+
+.pt .redeem-code {
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/redeem-code-button-sprite.png) top left no-repeat;
+}
+
+.redeem-code:hover {
+	background-position:0 -29px;
+}
+
+#promo-blocks {
+	width:980px;
+	height:138px;
+}
+
+.promo-block {
+	width:490px;
+	height:140px;
+	float:left;
+	position:relative;
+	color:#fff;
+}
+
+.promo-block a {
+	color:#fff;
+
+}
+
+.promo-block.promo-block-left {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/widget-4.png) 0 0 no-repeat;
+}
+
+.promo-block.audio {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/widget-1.jpg) 0 0 no-repeat;
+}
+
+.promo-block.video {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/widget-2.png) 0 0 no-repeat;
+}
+
+.promo-block.gift, .promo-block.promo-block-right {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/widget-6.png) 0 0 no-repeat;
+}
+
+#music-player {
+	position:absolute;
+	left: 140px;
+	top: 0px;
+}
+
+.download-from-itunes {
+	display:block;
+	text-indent:-9999px;
+	width:116px;
+	height:40px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/btn-itunes-stacked.png) 0 0 no-repeat;
+	position:absolute;
+	left: 240px;
+	top: 65px;
+}
+
+.de .download-from-itunes {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/btn-itunes-stacked.png) 0 0 no-repeat;
+}
+
+.es .download-from-itunes {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/btn-itunes-stacked.png) 0 0 no-repeat;
+}
+
+.pt .download-from-itunes {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/btn-itunes-stacked.png) 0 0 no-repeat;
+}
+
+.fr .download-from-itunes {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/btn-itunes-stacked.png) 0 0 no-repeat;
+}
+
+.download-from-itunes:hover {
+	background-position: 0 -40px;
+}
+.promo-block-right .promo-callout  {
+  position:absolute;
+  top:0;
+  right:0;
+  height: 35px;
+  line-height: 35px;
+  width: 93px;
+  padding: 0 0 3px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/promo-callout-blue.png) 0 0 no-repeat;
+}
+
+.promo-block-right .promo-callout-large, .promo-block-left .promo-callout-large {
+  background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/promo-callout-blue-large.png) 0 0 no-repeat;
+  padding: 0 0 3px 5px;
+  width: 120px;
+}
+.promo-block-right .promo-info {
+	position:absolute;
+	bottom:25px;
+	left:217px;
+}
+.promo-block-left .promo-info {
+	position:absolute;
+	bottom:55px;
+	left:217px;
+}
+.promo-block-right .promo-info .title, .promo-block-left .promo-info .title {
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.promo-block-right .promo-info .title, .promo-block-left .promo-info .title,
+.de .promo-block-right .promo-info .title, .de .promo-block-left .promo-info .title,
+.es .promo-block-right .promo-info .title, .es .promo-block-left .promo-info .title,
+.fr .promo-block-right .promo-info .title, .fr .promo-block-left .promo-info .title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fr .promo-block-left .promo-info .title {
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.promo-block-right .promo-info .sub-title, .promo-block-left .promo-info .sub-title {
+	color:#97e1f3;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.promo-block-right .promo-info .disclaimer, .promo-block-left .promo-info .disclaimer {
+	color:#fff;
+	font-size:11px;
+	font-weight:normal;
+	margin-top: 4px;
+}
+
+.promo-block-right .promo-info .cta, .promo-block-left .promo-info .cta {
+  	display: inline-block;
+	font-size:13px;
+	font-weight:bold;
+  	margin-top: 1em;
+	color:#fff;
+	padding-right:20px;
+	margin-bottom: 5px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/arrow-right.png) center right no-repeat;
+}
+.promo-block-right .promo-image, .promo-block-left .promo-image {
+    bottom: 12px;
+    height: 122px;
+    left: 5px;
+    position: absolute;
+    width: 122px;
+}
+
+
+
+#song-1 {
+	width:122px;
+	height:122px;
+	position:absolute;
+	top:10px;
+	left:15px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/album-artwork.png) 0 0 no-repeat;
+}
+
+#video-2 {
+	width:210px;
+	height:125px;
+	position:absolute;
+	left:10px;
+	top:8px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/thumb-video-2.png) 0 0 no-repeat;
+}
+
+.song-info .title {
+	color:#fff;
+	font-size:14px;
+	font-weight:bold;
+	position:absolute;
+	left:240px;
+	top:20px;
+}
+
+.es .song-info .title {
+	top:8px;
+	width:240px;
+}
+
+.song-info .artist {
+	color:#98e1f3;
+	font-size:11px;
+	font-weight:bold;
+	position:absolute;
+	left:270px;
+	top:40px;
+}
+
+.song-info .legalese {
+	color:#e4e4e4;
+	width:200px;
+	font-size:9px;
+	font-weight:normal;
+	position:absolute;
+	top: 110px;
+	left: 240px;
+}
+
+.gift .thumbnail {
+	position:absolute;
+	width:211px;
+	height:127px;
+	left:10px;
+	top:8px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/gift-thumbnail.png);
+
+}
+
+.video .thumbnail {
+	position:absolute;
+	left:5px;
+	top:0px;
+	width:215px;
+	height:140px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/video-thumbnail.png);
+}
+
+.trigger-video {
+	cursor:pointer;
+}
+
+.video .thumbnail:hover {
+	background-position: 0 -140px;
+}
+
+.gift .title,
+.video .title {
+	position:absolute;
+	left:240px;
+	top:20px;
+	font-size:18px;
+	width:240px;
+}
+
+
+.gift .promo-text,
+.video .promo-text {
+	position:absolute;
+	left:240px;
+	top:40px;
+	font-size:15px;
+	width:250px;
+
+}
+
+.gift .cta,
+.video .cta {
+	position:absolute;
+	left:240px;
+	top:100px;
+	color:#fff;
+	background:#f00;
+	display:block;
+	padding-right:20px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/arrow-right.png) center right no-repeat;
+}
+
+.gift .cta:hover,
+.video .cta:hover {
+	color:#fff;
+}
+
+
+#footer {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/bottom-footer.png) top left no-repeat;
+	width:980px;
+	height:265px;
+	color:#fff;
+	position:relative;
+}
+
+#footer a {
+	color:#e4e4e4;
+}
+
+#footer a:hover {
+	color:#fff;
+}
+
+#footer ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+#footer ul li {
+	line-height:24px;
+}
+
+#footer-logo {
+	width:100px;
+	height:75px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/diw-logo.png) top left no-repeat;
+	position:absolute;
+	left:10px;
+	top:10px;
+}
+
+#quicklinks {
+	position:absolute;
+	width:160px;
+	height:220px;
+	float:left;
+	left: 160px;
+	top:30px;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/vertical-divider.png) top right no-repeat;
+}
+
+#quicklinks-title {
+	font-weight:bold;
+	font-size:15px;
+	padding-bottom:15px;
+}
+
+#company {
+	position:absolute;
+	width:160px;
+	height:220px;
+	left: 360px;
+	top:30px;
+	background: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/vertical-divider.png) top right no-repeat;
+}
+
+#company-title {
+	font-weight:bold;
+	font-size:15px;
+	padding-bottom:15px;
+}
+
+#industry {
+	width: 185px;
+	height: 75px;
+	position:absolute;
+	right:20px;
+	top:135px;
+}
+
+#legal {
+	position:absolute;
+	top:240px;
+	width:980px;
+	height:20px;
+	text-align:center;
+	font-size:10px;
+}
+
+#legal a {
+	color:#ffbc3a;
+	font-weight:bold;
+}
+
+#legal span {
+	margin:0 4px;
+}
+
+#footer-buttons {
+	position:absolute;
+	width:190px;
+	height:300px;
+	left:540px;
+	top:20px;
+}
+
+#btn-activate-card,
+#btn-parent-tools,
+#btn-unlock-items {
+	display:block;
+	width:185px;
+	height:60px;
+	text-indent:-99999px;
+	line-height:0px;
+	float:left;
+	margin-bottom:5px;
+}
+
+
+
+#btn-activate-card {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/sprite-activate-card.png) top left no-repeat;
+}
+
+.de #btn-activate-card {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/sprite-activate-card.png) top left no-repeat;
+}
+
+.es #btn-activate-card {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/sprite-activate-card.png) top left no-repeat;
+}
+
+.fr #btn-activate-card {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/sprite-activate-card.png) top left no-repeat;
+}
+
+.pt #btn-activate-card {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/sprite-activate-card.png) top left no-repeat;
+}
+
+#btn-parent-tools {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/sprite-parent-tools.png) top left no-repeat;
+}
+
+.de #btn-parent-tools {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/sprite-parent-tools.png) top left no-repeat;
+}
+
+.es #btn-parent-tools {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/sprite-parent-tools.png) top left no-repeat;
+}
+
+.fr #btn-parent-tools {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/sprite-parent-tools.png) top left no-repeat;
+}
+
+.pt #btn-parent-tools {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/sprite-parent-tools.png) top left no-repeat;
+}
+
+#btn-unlock-items {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/sprite-unlock-items.png) top left no-repeat;
+}
+
+.de #btn-unlock-items {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/de/sprite-unlock-items.png) top left no-repeat;
+}
+
+.es #btn-unlock-items {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/es/sprite-unlock-items.png) top left no-repeat;
+}
+
+.fr #btn-unlock-items {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/fr/sprite-unlock-items.png) top left no-repeat;
+}
+
+.pt #btn-unlock-items {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/pt/sprite-unlock-items.png) top left no-repeat;
+}
+
+#btn-activate-card:hover,
+#btn-parent-tools:hover,
+#btn-unlock-items:hover {
+	background-position:0 -60px;
+}
+
+#language-select {
+	position:absolute;
+	right:25px;
+	top:30px;
+	width:200px;
+/*	height:200px;*/
+}
+
+#language-select a {
+	display:block;
+	width:140px;
+	height:30px;
+	line-height:30px;
+	text-align: left;
+	color:#0052af;
+	font-size:13px;
+	font-weight:bold;
+}
+
+#language-select a:hover {
+	background-color:#d3edfd;
+	color:#0052af;
+	text-decoration: none;
+
+}
+
+#language-select > div > a {
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/sprite-select.png) 5px 0px no-repeat;
+	display:block;
+	width:170px;
+	height:35px;
+	padding-left:30px;
+	color:#fff;
+	line-height:40px;
+}
+
+
+#languages {
+	width:180px;
+	padding-left:20px;
+	height:218px;
+	z-index:10;
+	background:url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/rebrand/rebrand-images/footer-dropdown.png) 5px -50px no-repeat;
+	display: none;
+}
+
+
+#languages a{
+	padding:0 10px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+
+#language-select > div > a:hover {
+	background-color:transparent; !important;
+	color:#fff;
+}
+
+#language-select > div > a.active {
+	background-position:5px -35px;
+	background-color:transparent;
+	color:#0052af;
+	line-height:40px;
+	outline-width: 0;
+}
+
+#primary,
+#secondary,
+#slider,
+#billboard,
+#mobile-lang-select,
+#ftr {
+    display:none;
+}
+
+#ftr_menus-mobile {
+	position:absolute;
+}
+
+a.button,
+a.button:link,
+a.button:visited {
+  behavior: url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/default/themes/club_penguin/css/pie/PIE.htc);
+  position: relative\9;
+  background: #0169c3 url(https://web.archive.org/web/20130131233626im_/http://media4.clubpenguin.com/sites/new/img/common/button-gradient-dk.png) left top repeat-x;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border-top: 1px solid #104b99;
+  border-left: 1px solid #104b99;
+  border-right: 1px solid #104b99;
+  border-bottom: 2px solid #104b99;
+  padding: 5px 11px 3px;
+  line-height: 1em;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'MyriadWebProBold', sans-serif;
+  font-weight: normal;
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-decoration: none;
+  color: #fff;
+  text-align: center; }
+  a.button:hover,
+  a.button:link:hover,
+  a.button:visited:hover {
+    color: #fff;
+    background: #015cb5;
+    text-decoration: none; }
+
+/*
+     FILE ARCHIVED ON 23:36:26 Jan 31, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:42:56 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  RedisCDXSource: 0.696
+  PetaboxLoader3.datanode: 388.643 (4)
+  PetaboxLoader3.resolve: 98.403
+  LoadShardBlock: 150.017 (3)
+  captures_list: 198.478
+  esindex: 0.013
+  exclusion.robots.policy: 0.165
+  CDXLines.iter: 30.457 (3)
+  load_resource: 370.951
+  exclusion.robots: 0.179
+*/

@@ -1,0 +1,105 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+$(document).ready(function() {
+
+	/* Change the big screen / small screen button to use javascript instead of reloading the page
+	 * To prevent users from losing their session if the want to change to small screen mode
+	 */
+
+	var setBigScreen = function() {
+		$("#bigscreen").hide();
+		$("#smallscreen").show();
+		$("#D_F_GameSection").css("height", "95%");	
+		
+		// If D_F_HudNotification dom element has been created fix it's position
+		if ($("#D_F_HudNotification").size() > 0) {
+			Disney.Friends.UI.HudNotification.reposition();
+		}
+		
+		try {
+			window.metrics.log("game_action", {"action":"screen_resize", "context":"small_to_large"});
+		} catch (e) {
+		}
+	}
+	var setSmallScreen = function() {
+		$("#smallscreen").hide();
+		$("#bigscreen").show();
+		$("#D_F_GameSection").css("height", "480px");		
+
+		// If D_F_HudNotification dom element has been created fix it's position
+		if ($("#D_F_HudNotification").size() > 0) {
+			Disney.Friends.UI.HudNotification.reposition();
+		}
+		
+		try {
+			window.metrics.log("game_action", {"action":"screen_resize", "context":"large_to_small"});
+		} catch (e) {
+		}
+	}
+
+	$("#bigscreen a").click(function() {
+		setBigScreen();
+		return false;
+	});	
+	$("#smallscreen a").click(function() {
+		setSmallScreen();
+		return false;
+	});	
+	
+	/* Force clean up of the flash object during logoff or if the user closes the window */
+	var flashCleanupNeeded = true;
+	$('a').click(function() {
+		// only handle logoff when the link will leave the page.
+		if ($(this).attr("href").search(/#/) < 0) {
+			var cpMovie = document.getElementById("club_penguin");
+			cpMovie.handleLogOff($(this).attr("href"));
+			flashCleanupNeeded = false;
+			return false;
+		}
+	});
+	$(window).unload(function() { 
+		if (flashCleanupNeeded) {
+			var cpMovie = document.getElementById("club_penguin");
+			cpMovie.handleWindowUnload();
+		}
+	});
+	
+	if (window.location.href.search(/smallscreen/) >= 0 ) {
+		setSmallScreen();
+	} else {
+		setBigScreen();	
+	}
+});
+
+}
+/*
+     FILE ARCHIVED ON 19:37:52 Jan 27, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:40 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 251.473
+  exclusion.robots: 0.076
+  exclusion.robots.policy: 0.07
+  RedisCDXSource: 2.142
+  esindex: 0.008
+  LoadShardBlock: 224.566 (3)
+  PetaboxLoader3.datanode: 254.487 (5)
+  CDXLines.iter: 21.608 (3)
+  load_resource: 476.098 (2)
+  PetaboxLoader3.resolve: 305.638 (2)
+*/

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#upgrade
+{
+	position:absolute;
+	width:760px;
+	height:480px;
+	margin:-234px 0 0 -380px;
+	top:50%;
+	left:50%;
+	background-image:url(http://web.archive.org/web/20130130194502im_/http://media1.clubpenguin.com/play/upgrade/images/expressInstall.png);
+}
+
+#upgradeContent
+{
+	position:relative;
+	width:440px;
+	height:290px;
+	margin:0 0 0  260px;
+	top:53px;
+}
+
+#upgradeText, #installText
+{
+	position:relative;
+	width:320px;
+	top:80px;
+	margin:0 auto 0 auto;
+}
+
+#upgradeText h1, #installText h1
+{
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+#upgradeText p, #installText p
+{
+	font-size:14px;
+	margin-bottom:10px;
+}
+
+#upgradeText p a:link, #installText p a:link
+{
+	color:#00ADEF;
+	text-decoration:none;
+}
+
+#upgradeText p a:visited, #installText p a:visited
+{
+	color:#00ADEF;
+	text-decoration:none;
+}
+
+#upgradeButton
+{
+	position:absolute;
+	top:365px;
+	left:365px;
+	cursor:pointer;
+}
+/*
+     FILE ARCHIVED ON 19:45:02 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:34 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  PetaboxLoader3.resolve: 96.57
+  RedisCDXSource: 1.958
+  esindex: 0.01
+  PetaboxLoader3.datanode: 126.226 (4)
+  CDXLines.iter: 23.823 (3)
+  exclusion.robots.policy: 0.196
+  exclusion.robots: 0.21
+  LoadShardBlock: 320.821 (3)
+  captures_list: 359.683
+  load_resource: 496.735
+*/

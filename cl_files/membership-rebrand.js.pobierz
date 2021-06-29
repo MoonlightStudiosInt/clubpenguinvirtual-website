@@ -1,0 +1,386 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+//To allow cross sub domain scripting
+document.domain = 'clubpenguin.com';
+var Disney = Disney || {};
+
+$(document).ready(function() {
+  Disney.Membership = Disney.Membership || {};
+
+  Disney.Membership.initModal = function() {
+    $("#modal-overlay").remove();
+    $("#modal-loading").remove();
+    $("#modal-window").remove();
+
+    Disney.Membership.modal = new CP.utils.Modal({
+      showClose: true,
+      contentCloseDelegate: '.modal-close',
+      onOpenComplete: function() {},
+      onCloseComplete: function() {},
+      onCloseStart: function() {},
+      onOpenStart: function() {}
+    });
+  };
+
+  Disney.Membership.showModal = function(url, openCallback, closeCallback) {
+    var rdm = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8); return v.toString(16); });
+    html = '<iframe id="modal-iframe" src="'+url+'?'+rdm+'" height="1000" width="985" allowtransparency="true" marginheight="0" marginwidth="0" frameborder="0" style="overflow:hidden;" style="visibility:hidden;" onload="this.style.visibility = \'visible\';"=></iframe>';
+    $('#modal-content').html(html).css({'top': '-2000px', 'position': 'relative'});
+    $('#modal-window').append($("#preload-gif").html());
+    $('#modal-window img:last').css({'top': '47%', 'left': '47%', 'position': 'fixed'});
+
+    $('iframe#modal-iframe').load(function() {
+        $('#modal-content').css({'top': '65px', 'position': 'relative'});
+        $('#modal-window img:last').remove();
+    });
+
+    Disney.Membership.modal.open();
+
+  };
+
+  //On touch devices, allow user to deeplink into the login form, don't use a lightbox
+  $('.btn-buy-now, #gc-purchase-online, #gc-activate, #mc-where-to-buy, #mc-activate-now, #voucher-activate-btn').on({ 'touchstart' : function(){window.location.href = this.href; return true;}});
+
+  $('.btn-buy-now, #gc-purchase-online, #gc-activate, #mc-where-to-buy, #mc-activate-now, #voucher-activate-btn').click(function(e) {
+    Disney.Membership.showModal(this.href, Disney.Membership.modalOpenCallback);
+    return false;
+  });
+
+  Disney.Membership.initSlider = function() {
+    var self = this;
+    // if ($('.vid-content').length > 0) {
+    // }
+
+    if ($('.why-block2').length > 0) {
+      $('.why-block2').click(function(e){
+        $('.why-block2').removeClass('active');
+        $(this).addClass('active');
+        //show active content
+        var index = $('.why-block2').index(this);
+        $('.vid-content').removeClass('active');
+        $($('.vid-content').get(index)).addClass('active');
+        var bgPosition = 70 + (183*(index));
+
+        $('.thumb-slider-content').css({'background-position':+bgPosition + 'px 0px'});
+      });
+    }
+  }
+
+  Disney.Membership.initWhatsNew = function() {
+    var self = this;
+    var sliderclass = "first";
+
+    //Get the what's new content from drupal
+    var request = jQuery.ajax({
+        type: "GET",
+        url: "http://web.archive.org/web/20140215001029/https://secured.clubpenguin.com/"+Disney.Membership.langPath+"jsonp/membership/whats-new",
+        dataType: "jsonp",
+        jsonp: 'callback',
+        crossDomain: true,
+        cache: false,
+        success: function(result) {
+          $.each(result, function( index, content ) {
+              var html = "";
+              
+              html =  '<div class="slider-content ' + sliderclass + '">';
+              html += '  <div class="slider-content-image">';
+              html += '    <img src="' + content.membership_whats_new_image[0].uri + '" />';
+              html += '  </div>';
+              html += '  <h4>' + content.heading[0].value + '</h4>';
+              html += '  <p>' + content.body[0].value + '</p>';
+              html += '</div>';
+					
+              $("#whats-new #slide").append(html);
+              sliderclass = "";
+          });
+        }
+    });
+	  
+  }
+
+  Disney.Membership.initPrice = function() {
+    var self = this;
+    $(window).scroll(function(e) {
+      if ($('.price').length > 0 && $(window).scrollTop() > 150) {
+        $('.price').css({'position':'fixed', 'top':0});
+        $('#disclaimer').fadeOut();
+      } else {
+        $('.price').css({'position':'relative'});
+        $('#disclaimer').fadeIn();
+      }
+    })
+  }
+
+  Disney.Membership.initCurrency = function() {
+    var self = this;
+    $('#currency-drop-down').click(function(e){
+      $(this).addClass('hover');
+      $('.currency-drop-down-prompt span').show();
+      $('.currency-drop-down-value.active').css({'display':'block','position':'relative','top':'auto'});
+      if (typeof e.target.href !== 'undefined') {
+        return !$(e.target).parent().hasClass('active');
+      }
+      return false;
+    });
+
+    $('#currency-drop-down.hover').live('mouseleave', function(){
+      $(this).removeClass('hover');
+      $('.currency-drop-down-prompt span').hide();
+      $('.currency-drop-down-value.active').css({'display':'block','position':'absolute','top':'0'});
+    });
+
+    $('.currency-drop-down-prompt span').hide();
+    $('.currency-drop-down-value.active').css({'display':'block','position':'absolute','top':'0'});
+
+  }
+
+  Disney.Membership.initFooter = function() {
+
+    //footer language select
+    $('#language-select a.top-level').click(function(e) {
+      $(this).addClass('active');
+      $('#bottom-languages').css('display', 'block');
+      return false;
+    });
+    $('#language-select').mouseleave(function(){
+      $('a.top-level').removeClass('active');
+      $('#bottom-languages').hide();
+    });
+
+    //AB Test
+    if ($("#mc-activate-now").length > 0) {
+      $("#btn-activate-card").attr('href', $("#mc-activate-now").attr('href'));
+      $("#btn-activate-card").click(function(e){
+        Disney.Membership.showModal(this.href, Disney.Membership.modalOpenCallback);
+        return false;
+      });
+    }
+  }
+
+  Disney.Membership.initLanguage = function() {
+    var currentURL = window.location.pathname;
+    var pathArray = currentURL.split("/");
+    var langPath = pathArray[1];
+    if ((langPath != "es") && (langPath != "fr") && (langPath != "pt") && (langPath != "de") && (langPath != "ru")) { langPath="" } 
+    Disney.Membership.langPath = (langPath == "" ? langPath : langPath + "/");
+  }
+
+  Disney.Membership.initStepTiming = function() {
+    var self = this;
+
+
+
+
+    $('.content-block .btn-buy-now').mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'choose_plan', {'result': this.rel.substring(1)});
+      }catch(e){}
+
+      try{
+         var ebOrderID = window.metrics.options.SWID;
+         var ebProductID = window.metrics.options.TRANSID;
+         var ebRand = Math.random()+'';
+         ebRand = ebRand * 1000000;
+         //<![CDATA[
+         $('body').append('<img src="HTTPS://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&amp;ActivityID=270019&amp;rnd=' + ebRand + '&amp;OrderID='+ebOrderID+'&amp;ProductID='+ebProductID+'"/>');
+         //]]>
+        }catch (e){}
+    });
+
+
+    $('#banner-latam-5 .btn-buy-now').mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'choose_plan_promo_latam', {'result': this.rel.substring(1)});
+      }catch(e){}
+
+      try{
+         var ebOrderID = window.metrics.options.SWID;
+         var ebProductID = window.metrics.options.TRANSID;
+         var ebRand = Math.random()+'';
+         ebRand = ebRand * 1000000;
+         //<![CDATA[
+         $('body').append('<img src="HTTPS://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&amp;ActivityID=270019&amp;rnd=' + ebRand + '&amp;OrderID='+ebOrderID+'&amp;ProductID='+ebProductID+'"/>');
+         //]]>
+        }catch (e){}
+    });
+
+    $("#gc-purchase-online").mousedown(function(e){
+      try{
+          window.metrics.stepTime('website', 'gccard_activation_create');
+      } catch(e) {}
+    });
+
+    $("#voucher-activate-btn").mousedown(function(e){
+      try{
+          window.metrics.stepTime('website', 'voucher_activation_choose');
+      } catch(e) {}
+    });
+
+    $("#gc-activate").mousedown(function(e){
+      try{
+          window.metrics.stepTime('website', 'gccard_activation_choose');
+      } catch(e) {}
+    });
+
+    $("#mc-where-to-buy").mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'mcard_activation_wheretobuy');
+      } catch(e) {}
+    });
+
+    $("#mc-activate-now").mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'mcard_activation_choose');
+      } catch(e) {}
+    });
+
+    $("#buy-card-6").mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'choose_plan', {'result': '6,points'});
+      } catch(e) {}
+    })
+
+    $("#buy-card-12").mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'choose_plan', {'result': '12,points'});
+      } catch(e) {}
+    });
+
+    $("#btn-activate-card").mousedown(function(e){
+      try{
+        window.metrics.stepTime('website', 'gccard_activation_create', {'result': 'footer'});
+      } catch(e) {}
+    });
+  }
+
+  Disney.Membership.cardActivation = function() {
+    if ( location.search.indexOf('card=activate') != -1 && $('#mc-activate-now').length ) {
+      $('#mc-activate-now').click();
+    }
+  }
+
+  Disney.Membership.addTracking = function(transActivityId, transRevenue, transOrderId, transProductId, transProductInfo) {
+      // generate random #
+      var trackingRand = Math.random()+'';
+      trackingRand = trackingRand * 1000000;
+      // Append the tracking code to document
+      var imgSrc = 'HTTPS://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&amp;ActivityID='+ transActivityId + '&amp;Value='+ transRevenue + '&amp;OrderID='+ transOrderId + '&amp;ProductID='+ transProductId + '&amp;ProductInfo='+ transProductInfo +'&amp;ns=1&amp;rnd='+ trackingRand;
+      $('body').append('<img width="1" height="1" style="border:0" src="'+ imgSrc +'" />');
+  };
+
+  Disney.Membership.initTracking = function(activityId, swid) {
+      try {
+          // MediaMind tracking
+          var transActivityId = activityId;
+          var transRevenue = '';
+          var transProductId = window.metrics.options.TRANSID;
+          var transProductInfo = '';
+          // add tracking to page
+          Disney.Membership.addTracking(transActivityId, transRevenue, swid, transProductId, transProductInfo);
+      } catch(e){}
+  };
+
+  Disney.Membership.initLanguage();
+  Disney.Membership.initCurrency();
+  Disney.Membership.initModal();
+  Disney.Membership.initSlider();
+  Disney.Membership.initPrice();
+  Disney.Membership.initWhatsNew();
+  Disney.Membership.initFooter();
+  Disney.Membership.initStepTiming();
+  Disney.Membership.cardActivation();
+});
+
+window.jQuery(document).ready(function() {
+  try {
+    window.metrics.stepTime("website","start");
+    } catch(e){}
+});
+
+
+/**
+jQuery.iecors
+
+This is a new "transport" (or driver) for jQuery that allows the browsers IE 8 and IE 9 to make cross-domain AJAX requests using Microsoft's XDomainRequest object. No need for JSONP!
+**/
+(function( jQuery ) {
+  // Create the request object
+  // (This is still attached to ajaxSettings for backward compatibility)
+  jQuery.ajaxSettings.xdr = function() {
+    return (window.XDomainRequest ? new window.XDomainRequest() : null);
+  };
+
+  // Determine support properties
+  (function( xdr ) {
+    jQuery.extend( jQuery.support, { iecors: !!xdr });
+  })( jQuery.ajaxSettings.xdr() );
+
+  // Create transport if the browser can provide an xdr
+  if ( jQuery.support.iecors ) {
+
+    jQuery.ajaxTransport(function( s ) {
+      var callback;
+
+      return {
+        send: function( headers, complete ) {
+          var xdr = s.xdr();
+
+          xdr.onload = function() {
+            var headers = { 'Content-Type': xdr.contentType };
+            complete(200, 'OK', { text: xdr.responseText }, headers);
+          };
+          
+          // Apply custom fields if provided
+                                        if ( s.xhrFields ) {
+            xhr.onerror = s.xhrFields.error;
+            xhr.ontimeout = s.xhrFields.timeout;
+                                        }
+
+          xdr.open( s.type, s.url );
+
+          // XDR has no method for setting headers O_o
+
+          xdr.send( ( s.hasContent && s.data ) || null );
+        },
+
+        abort: function() {
+          xdr.abort();
+        }
+      };
+    });
+  }
+})( jQuery );
+
+
+}
+/*
+     FILE ARCHIVED ON 00:10:29 Feb 15, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:10:50 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1268.051
+  exclusion.robots: 0.153
+  exclusion.robots.policy: 0.141
+  RedisCDXSource: 2.167
+  esindex: 0.011
+  LoadShardBlock: 1234.694 (3)
+  PetaboxLoader3.datanode: 1216.334 (4)
+  CDXLines.iter: 26.637 (3)
+  load_resource: 49.895
+  PetaboxLoader3.resolve: 21.682
+*/

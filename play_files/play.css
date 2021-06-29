@@ -1,0 +1,119 @@
+body {
+	font-family:"Myriad Web Pro", Arial, Verdana;
+}
+
+
+#rules-container {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/activation-rules-container.png) 0 0 no-repeat;
+	width:375px;
+	height:58px;
+	position:absolute;
+	left:19px;
+	top:159px;
+	padding:15px;
+	font-size:13px;
+}
+
+ #rules {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/club-penguin-rules-tall.png) 0 0 no-repeat;
+	width:437px;
+	height:323px;
+	position:relative;
+	z-index:20;
+}
+
+
+#warning {
+	width:400px;
+	height:40px;
+	position:absolute;
+	z-index:20;
+	top:265px;
+	left:15px;
+	font-size:11px;
+	color:#696969;
+	padding:5px;
+}
+
+#rules-container p.title{
+	color:#335dac;
+	font-weight:bold;
+}
+
+#rules-container p {
+	color:#427dc7;
+}
+
+#rules ul {
+	padding-left:19px;
+	padding-top:54px;
+}
+
+#rules ul li {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-fpo.jpg) 0 0 no-repeat;
+	width:97px;
+	height:106px;
+	float:left;
+	display:block;
+	text-indent:-9999px;
+	line-height:0;
+	margin-right:3px;
+	cursor:pointer;
+}
+
+#rules ul li#r0 {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-0.png) 0 0 no-repeat;
+}
+#rules ul li#r1 {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-1.png) 0 0 no-repeat;
+}
+#rules ul li#r2 {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-2.png) 0 0 no-repeat;
+}
+#rules ul li#r3 {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-3.png) 0 0 no-repeat;
+}
+
+#rules ul li.active {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-fpo-active.jpg) 0 0 no-repeat;
+	width:97px;
+	height:105px;
+	float:left;
+	display:block;
+	text-indent:-9999px;
+	line-height:0;
+	margin-right:3px;
+}
+
+#rules ul li#r0.active {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-0-active.png) 0 0 no-repeat;
+}
+#rules ul li#r1.active {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-1-active.png) 0 0 no-repeat;
+}
+#rules ul li#r2.active {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-2-active.png) 0 0 no-repeat;
+}
+#rules ul li#r3.active {
+	background:url(http://web.archive.org/web/20130130194456im_/http://media1.clubpenguin.com/play/images/rule-tile-3-active.png) 0 0 no-repeat;
+}
+/*
+     FILE ARCHIVED ON 19:44:56 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:35 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 119.923
+  exclusion.robots: 0.114
+  exclusion.robots.policy: 0.104
+  RedisCDXSource: 4.258
+  esindex: 0.01
+  LoadShardBlock: 82.768 (3)
+  PetaboxLoader3.datanode: 82.521 (4)
+  CDXLines.iter: 27.469 (3)
+  load_resource: 52.004
+*/

@@ -1,0 +1,73 @@
+/* modal window styles
+------------------------------------------------------------------------------------*/
+#modal-overlay{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	z-index: 1000;
+}
+#modal-loading{
+	display:none;
+	position:absolute;
+	width:32px;
+	height:32px;
+	z-index: 1001;
+}
+#modal-window{
+	display:none;
+	position:absolute;
+	z-index: 1001;
+}
+#modal-video img {
+	border:8px solid #005592;
+	-moz-border-radius:8px;
+	-wekit-border-radius:8px;
+	border-radius:8px;
+	background:#f00;	
+}
+
+a#modal-close {
+	position:absolute;
+	right:-18px;
+	top:-18px;
+	background:url(https://web.archive.org/web/20140215000936im_/https://secure.clubpenguin.com/_/img/components/modal/btn_close.png) top left no-repeat;
+	width:44px;
+	height:44px;
+	text-indent:-9999px;
+	line-height:0;
+}
+
+a#modal-close:hover {
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+}
+
+/* modal notification view */
+#modal-window.modal-notification #modal-close {
+	display: none;
+}
+/*
+     FILE ARCHIVED ON 00:09:36 Feb 15, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:10:07 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  load_resource: 611.762 (2)
+  esindex: 0.01
+  exclusion.robots.policy: 0.151
+  PetaboxLoader3.resolve: 93.139 (2)
+  captures_list: 1097.268
+  RedisCDXSource: 0.763
+  exclusion.robots: 0.162
+  CDXLines.iter: 24.791 (3)
+  PetaboxLoader3.datanode: 1522.656 (5)
+  LoadShardBlock: 1063.466 (3)
+*/

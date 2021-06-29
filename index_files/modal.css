@@ -1,0 +1,74 @@
+/* modal window styles
+------------------------------------------------------------------------------------*/
+#modal-overlay{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	z-index: 1000;
+}
+#modal-loading{
+	display:none;
+	position:absolute;
+	width:32px;
+	height:32px;
+	z-index: 1001;
+}
+#modal-window{
+	display:none;
+	position:absolute;
+	z-index: 1001;
+}
+#modal-video img {
+	border:8px solid #005592;
+	-moz-border-radius:8px;
+	-wekit-border-radius:8px;
+	border-radius:8px;
+	background:#f00;	
+}
+
+a#modal-close {
+	position:absolute;
+	right:-25px;
+	top:-18px;
+	background:url(https://web.archive.org/web/20130130230153im_/http://media4.clubpenguin.com/sites/default/themes/club_penguin/img/components/modal/btn_close.png) top left no-repeat;
+	width:44px;
+	height:44px;
+	text-indent:-9999px;
+	line-height:0;
+	z-index: 999;
+}
+
+a#modal-close:hover {
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+}
+
+/* modal notification view */
+#modal-window.modal-notification #modal-close {
+	display: none;
+}
+/*
+     FILE ARCHIVED ON 23:01:53 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:42:54 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  RedisCDXSource: 8.325
+  PetaboxLoader3.resolve: 28.146
+  esindex: 0.024
+  PetaboxLoader3.datanode: 87.97 (4)
+  CDXLines.iter: 47.87 (3)
+  LoadShardBlock: 137.996 (3)
+  captures_list: 201.47
+  exclusion.robots: 0.245
+  exclusion.robots.policy: 0.228
+  load_resource: 64.126
+*/

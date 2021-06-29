@@ -1,0 +1,81 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+if(typeof CP === 'undefined') {
+	CP = {};
+}
+
+(function($){
+	
+	CP.membership = function(options) {
+		this.options = {
+		};
+		$.extend(true, this.options, options);
+		this.load();
+	};
+	
+	CP.membership.prototype.initListeners = function() {		
+		//membership slider
+		$("#membership-slider-buttons li").click(function(){
+			var btn = $("#membership-slider-buttons li").index(this);
+			$('#membership-slider-buttons li').removeClass('active');
+			$(this).addClass('active');
+			$('.slider-content').hide();
+			$($('.slider-content')[btn]).show();
+			return false;
+		});
+		
+		//BI membership buttons
+		$('.buy-membership').click(function(){
+			try{
+				if (window.metrics.options.CONTEXT == '') {
+					window.metrics.stepTime('website', 'start');
+				} else {
+					window.metrics.stepTime('website', 'membership_home');
+				}
+			}catch(e){}
+		});
+	};
+	
+	CP.membership.prototype.load = function() {
+		this.initListeners();
+		
+	};
+
+})(window.jQuery);
+
+window.jQuery(document).ready(function(){
+	window.membership = new CP.membership();
+});
+
+}
+/*
+     FILE ARCHIVED ON 20:00:52 Jan 27, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:30:13 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  exclusion.robots.policy: 0.185
+  PetaboxLoader3.datanode: 96.524 (5)
+  esindex: 0.014
+  exclusion.robots: 0.198
+  PetaboxLoader3.resolve: 91.608 (2)
+  CDXLines.iter: 23.103 (3)
+  captures_list: 163.118
+  LoadShardBlock: 133.086 (3)
+  RedisCDXSource: 2.826
+  load_resource: 166.513 (2)
+*/

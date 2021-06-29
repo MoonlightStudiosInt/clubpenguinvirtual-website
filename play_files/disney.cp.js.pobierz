@@ -1,0 +1,103 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+if(typeof Disney === 'undefined') {
+	Disney = {};
+}
+
+(function($){
+	Disney.CP = function(){
+		this.currentIndex = 0;
+		this.modal = new CP.utils.Modal({
+			showClose: true,
+			contentCloseDelegate: '.modal-close',
+			onOpenComplete: function() {},
+			onCloseComplete: function() {},
+			onCloseStart: function() {},
+			onOpenStart: function() {}
+		});
+	};
+	
+	
+	Disney.CP.prototype.showRules = function(lang) {
+		var self = this;
+		$('#modal-content').load('rules-overlay.html #rules-wrap', function(){
+			//open modal
+			self.modal.open('', function(){
+				self.initRules();
+			}, function(){
+				clearInterval(self.rulesInterval);
+			});
+		});
+	};
+	
+	Disney.CP.prototype.setTimer = function(currentIndex) {
+		var self = this;
+		self.rulesInterval = setInterval(function(){
+			self.currentIndex = (self.currentIndex+1) % $("#rules ul li").length;
+			self.showRule(self.currentIndex);
+		}, 5000);
+	};
+	
+	Disney.CP.prototype.initRules = function(){
+		var self = this;
+		if ($("#rules").length > 0) {
+			$("#rules ul li").mouseover(function(){
+				self.currentIndex = $("#rules ul li").index(this);
+				self.showRule(self.currentIndex);
+			});
+
+			$("#rules ul li").mouseenter(function(){
+				clearInterval(self.rulesInterval);
+			}).mouseleave(function(){
+				self.currentIndex = $("#rules ul li").index(this);
+				self.setTimer(self.currentIndex);
+			});
+			self.setTimer(0);
+		}
+	};
+
+	Disney.CP.prototype.showRule = function(index) {
+		$("#rules ul li").removeClass("active");
+		$($("#rules ul li")[index]).addClass("active");
+		
+		$("#rules-container").html(	$($("#rules ul li")[index]).html());
+	};
+	
+})(window.jQuery);
+
+window.jQuery(document).ready(function(e){
+	window.cp = new Disney.CP();
+});
+
+}
+/*
+     FILE ARCHIVED ON 19:45:02 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:39 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  load_resource: 79.295
+  esindex: 0.016
+  exclusion.robots.policy: 0.193
+  PetaboxLoader3.resolve: 48.452
+  captures_list: 426.403
+  RedisCDXSource: 7.154
+  exclusion.robots: 0.208
+  CDXLines.iter: 26.187 (3)
+  PetaboxLoader3.datanode: 405.511 (4)
+  LoadShardBlock: 386.404 (3)
+*/

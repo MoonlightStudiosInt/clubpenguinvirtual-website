@@ -1,0 +1,169 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+if(typeof CP === 'undefined') {
+	CP = {};
+}
+
+(function($){
+
+
+	CP.home = function(options) {
+		this.options = {
+			//supported width thresholds in desc order
+			widths : {},
+			REBRAND: null
+		};
+		$.extend(true, this.options, options);
+		this.load();
+	};
+
+	CP.home.prototype.initListeners = function() {
+		var self = this;
+		//modal stuff
+		$(".trigger-video").click(function() {
+			if (CP.global.runningVars.hasFlash) {
+				$('#modal-content').load(this.href);
+				CP.runningVars.modal.open();
+				return false;
+			} else {
+				return true;
+			}
+		});
+
+		//language select dropdown
+		$('#language-select a.top-level').click(function(e) {
+			$(this).addClass('active');
+			$('#languages').css('display', 'block');
+			return false;
+		});
+		$('#language-select').mouseleave(function(){
+			$('a.top-level').removeClass('active');
+			$('#languages').hide();
+		});
+
+		//billboards
+		$('#indicators a').click(function(e) {
+			var billboardindex = index = $("#indicators a").index(this);
+			if (!CP.global.runningVars.hasFlash) {
+			  //we hide the last indicator (so the numbering still works) but the scene is the first in rotation
+			  billboardindex = billboardindex+1;
+			}
+			$("#indicators a").removeClass("active");
+			switch (billboardindex) {
+			  case 0:  //show homepage scene
+			      $("#scene").show();
+			      $("#billboards").hide();
+			      break;
+			  default: //show billboard
+			      $("#billboards a").hide();
+			      $($("#billboards a").get(billboardindex-1)).show();
+			      $("#billboards").show();
+			      $("#scene").hide();
+			      break;
+			}
+
+			$($("#indicators a").get(index)).addClass("active");
+		});
+	};
+
+	CP.home.prototype.load = function() {
+		var rebrand;
+		//check if user is cookied
+		if (this.options.REBRAND === null) {
+			rebrand = getCookie('cprebrand');
+		}
+		if (rebrand && rebrand != null) {
+			this.options.REBRAND = rebrand;
+		}
+		if (this.options.REBRAND == null) {
+			//Set rebrand to 1
+			this.options.REBRAND = 'new';
+			try {
+				setCookie('cprebrand', this.options.REBRAND);
+			} catch (e) {
+			}
+		}
+
+
+		var self = this;
+		this.initModal();
+		this.initListeners();
+
+		if (!CP.global.runningVars.hasFlash) {
+			//$("#indicators a").show(); //we hide the last indicator so numbering appears correct
+			$("#indicators .indicator:last-child").hide(); //we hide the last indicator so numbering appears correct
+			$("#scene").hide();
+			$($("#billboards a").get(0)).show();
+			$("#billboards").show();
+		}
+
+	};
+
+	CP.home.prototype.initFonts = function() {
+		Cufon.replace('.myriad-regular', {
+			fontFamily: 'MyriadWebPro-Regular',
+			hover: true
+		});
+	};
+
+	CP.home.prototype.initModal = function() {
+		$("#modal-overlay").remove();
+		$("#modal-loading").remove();
+		$("#modal-window").remove();
+
+		CP.runningVars.modal = new CP.utils.Modal({
+			showClose: true,
+			contentCloseDelegate: '.modal-close',
+			onOpenComplete: function() {},
+			onCloseComplete: function() {},
+			onCloseStart: function() {},
+			onOpenStart: function() {}
+		});
+	};
+
+
+})(window.jQuery);
+
+window.jQuery(document).ready(function(){
+	var home = new CP.home();
+});
+
+/**
+ * function to launch agegate/interstitial from within flash
+ */
+function itunesInterstitial() {
+	$("#itunesLink").mousedown();
+}
+
+}
+/*
+     FILE ARCHIVED ON 19:44:52 Jan 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:42:57 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 140.116
+  exclusion.robots: 0.14
+  exclusion.robots.policy: 0.128
+  RedisCDXSource: 2.178
+  esindex: 0.012
+  LoadShardBlock: 99.209 (3)
+  PetaboxLoader3.datanode: 96.952 (4)
+  CDXLines.iter: 34.406 (3)
+  load_resource: 95.884
+  PetaboxLoader3.resolve: 63.803
+*/

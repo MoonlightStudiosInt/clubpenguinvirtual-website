@@ -1,0 +1,229 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+/**
+ * Sets a cookie in the user's browser
+ * 
+ * @param name of the cookie
+ * @param value of the cookie
+ * @param expiry_days from now, null for a session cookie
+ */
+function setCookie(name, value, expiry_days)
+{
+	expiry_str = '';
+	path_str = '; path=/';
+	domain_str = '; domain=clubpenguin.com';
+	if(expiry_days) {
+		var d = new Date();
+		d.setDate(d.getDate() + expiry_days);
+		expiry_str = ';expires=' + d.toGMTString();
+	}
+	
+	document.cookie = name + '=' + escape(value) + expiry_str + path_str + domain_str;
+}
+
+/**
+ * Gets the value of the cookie from the user's browser
+ * 
+ * @param name of the cookie
+ * @return value of the cookie, null if the cookie isn't found
+ */
+function getCookie(name)
+{
+	var s = document.cookie.indexOf(name + "=");
+	if(s == -1) {
+		return null;
+	}
+	s += name.length + 1;
+	var e = document.cookie.indexOf(";", s);
+	if(e == -1) {
+		e = document.cookie.length;
+	}
+	return unescape(document.cookie.substring(s, e));
+}
+
+/* 
+The following checks for and records if a visitor is new or is a return visitor -- for A/B testing T&T
+*/
+
+if (!getCookie ('cpvisitor')) { 
+	setCookie('cpvisitorsession', 'true', ''); 
+	setCookie ('cpvisitor', 'new', 2400); 
+} else { 
+	if (!getCookie ('cpvisitorsession')) { 
+		if ((getCookie ('cpvisitor')) == 'new') {
+			setCookie ('cpvisitor', 'new', -1); 
+			setCookie ('cpvisitor', 'return', 2400); 
+		}			
+	}
+}
+
+/* 
+The following checks for and records the OAST source code present in a URL clicked on from a creative asset on an external site
+*/
+
+var qsParm = new Array();
+function qs() {
+var query = window.location.search.substring(1);
+var parms = query.split('&');
+	for (var i=0; i<parms.length; i++) {
+	var pos = parms[i].indexOf('=');
+		if (pos > 0) {
+		var key = parms[i].substring(0,pos);
+		var val = parms[i].substring(pos+1);
+		qsParm[key] = val;
+		}
+	}
+} 
+
+qsParm['oast'] = null;
+qs();
+
+if (qsParm['oast'] != null) {
+	if (getCookie ('oast')) { 
+		setCookie ('oast', '', -1);
+		setCookie ('oast', qsParm['oast'], 2400);
+	} else {
+		setCookie ('oast', qsParm['oast'], 2400);
+	}
+}
+
+if(typeof jsAPI === 'undefined') {
+	jsAPI = {};
+}
+
+jsAPI.showHTMLElements = function() {
+	$('#membershipOptionsPrimary, #membershipOptions_real, #membershipOptions_other, #membershipOptionsSecondary, #membershipOptions_ca').css({"visibility":"visible"});
+} 
+
+
+jsAPI.mboxBackground = function() {
+	try{
+		$('#content').css({
+			'background' : '#417DC5'
+		});
+		
+		var IE7 =  ($.browser.msie  && parseInt($.browser.version) == 7);
+		if (IE7){
+			if ($('#membershipOptionsPrimary').length > 0){
+				$('#membershipOptionsPrimary').css({
+					'background' : 'url(/images/pricing_bg_ca_ie7.png) 0 0 no-repeat',
+					'height':'135px',
+					'margin': '8px 0 0 -14px'
+				});	
+			}
+		} else{
+			if ($('#membershipOptionsPrimary').length > 0){
+				$('#membershipOptionsPrimary').css({
+					'background' : 'url(/images/pricing_bg_ca_b.png) 0 0 no-repeat',
+					'height':'135px',
+					'margin': '8px 0 0 -14px'
+				});	
+			}
+		}
+		
+		if ($('#membershipOptions_other').length > 0){
+			$('#membershipOptions_other').css({
+				'background' : 'url(/images/pricing_bg_ca_b.png) 0 0 no-repeat'
+			});	
+		}
+		
+		if ($('#membershipOptions_ca').length > 0){
+			$('#membershipOptions_ca').css({
+				'background' : 'url(/images/pricing_bg_ca_a.png) 0 0 no-repeat',
+				'height':'154px',
+				'margin-left': '-15px'
+			});
+		}
+		
+		if ($('#membershipOptions_real').length > 0){
+			$('#membershipOptions_real').css({
+				'background' : 'url(/images/pricing_bg_ca_b.png) 0 0 no-repeat',
+				'height':'135px',
+				'margin-left': '-15px'
+			});	
+		}		
+
+		
+		if ($('#content .padd').length > 2) {
+			//euro style template with no padding
+			$('#membershipOptions_other').css({
+				'height':'135px',
+				'margin': '8px 0 20px 15px'
+			});	
+		} else {
+			//ar style template with padding already in place
+			if (!$($('#membershipOptions_other').parent()).hasClass('padd')){
+				$('#membershipOptions_other').css({
+					'height':'135px',
+					'margin': '8px 0 20px 15px'
+				});	
+			} else {
+				$('#membershipOptions_other').css({
+					'height':'135px',
+					'margin': '8px 0 20px -15px'
+				});	
+			}
+		}
+	
+		if ($('#content .padd').length > 1) {
+			$($('#content .padd')[0]).css({
+				'background' : '#fefde1',
+				'border-bottom' : '3px solid #013A69'
+			});
+			var lastPad = $($('#content .padd')[($('#content .padd').length-1)]);
+			if (lastPad.find('object').length == 0) {
+				//last pad container doesn't contains flash
+				lastPad.css({
+					'background' : '#fff',
+					'border-top' : '3px solid #013A69',
+					'margin-top' : '25px'
+				});
+			} else {
+				//last pad container contains both flash and purchase image
+				if (lastPad.find('#membershipOptionsSecondary').length > 0) {
+					$('#membershipOptionsSecondary').wrap('<div class="temporary-div" />');
+					$('#content .padd').css({
+						'padding-bottom':0
+					});
+				}
+				
+			}
+		}
+
+	}catch(e){}
+}
+
+	
+
+}
+/*
+     FILE ARCHIVED ON 13:40:39 Jan 23, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:30:01 Feb 09, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 116.985
+  exclusion.robots: 0.103
+  exclusion.robots.policy: 0.095
+  RedisCDXSource: 1.657
+  esindex: 0.009
+  LoadShardBlock: 89.444 (3)
+  PetaboxLoader3.datanode: 2880.128 (4)
+  CDXLines.iter: 22.266 (3)
+  load_resource: 2859.088
+  PetaboxLoader3.resolve: 34.63
+*/
