@@ -36,7 +36,7 @@ a img {
 	display:block;
 	width:145px;
 	height:70px;
-	background:url(./cp-logo.webp) -5px -15px no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/cp-logo.webp) -5px -15px no-repeat;
 	text-indent:-9999px;
 	line-height:0;
 	position:absolute;
@@ -49,7 +49,7 @@ a img {
 }
 
 #nav {
-	background:url(./top-nav.webp) -3px 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/top-nav.webp) -3px 0 no-repeat;
 	width:980px;
 	height:85px;
 	padding:0;
@@ -105,7 +105,7 @@ a img {
 	position:absolute;
 	top:10px;
 	right:18px;
-	background:url(./play-now-sprite.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/play-now-sprite.webp) 0 0 no-repeat;
 	width:190px;
 	height:60px;
 	overflow:hidden;
@@ -114,19 +114,19 @@ a img {
 }
 
 .de #play-now {
-	background:url(./de/play-now-sprite.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/de/play-now-sprite.webp) 0 0 no-repeat;
 }
 
 .es #play-now {
-	background:url(./es/play-now-sprite.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/es/play-now-sprite.webp) 0 0 no-repeat;
 }
 
 .fr #play-now {
-	background:url(./fr/play-now-sprite.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/fr/play-now-sprite.webp) 0 0 no-repeat;
 }
 
 .pt #play-now {
-	background:url(./pt/play-now-sprite.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/pt/play-now-sprite.webp) 0 0 no-repeat;
 }
 
 #play-now:hover {
@@ -178,7 +178,7 @@ a img {
 	width:980px;
 	height:75px;
 	margin-top:-55px;
-	background:url(./billboard-nav.webp)  0px 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/billboard-nav.webp)  0px 0 no-repeat;
 	position:relative;
 }
 
@@ -193,7 +193,7 @@ a img {
 #billboard-nav .indicator a{
 	width:30px;
 	height:34px;
-	background:url(./sprite-bb-indicator.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/sprite-bb-indicator.webp) 0 0 no-repeat;
 	float:left;
 	font-weight:bold;
 	color:#fff;
@@ -215,7 +215,7 @@ a img {
 }
 
 #buy-membership {
-	background: url(./membership-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/membership-button-sprite.webp) top left no-repeat;
 	width:360px;
 	height:90px;
 	display:block;
@@ -227,19 +227,19 @@ a img {
 }
 
 .de #buy-membership {
-	background: url(./de/membership-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/de/membership-button-sprite.webp) top left no-repeat;
 }
 
 .es #buy-membership {
-	background: url(./es/membership-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/es/membership-button-sprite.webp) top left no-repeat;
 }
 
 .fr #buy-membership {
-	background: url(./fr/membership-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/fr/membership-button-sprite.webp) top left no-repeat;
 }
 
 .pt #buy-membership {
-	background: url(./pt/membership-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/pt/membership-button-sprite.webp) top left no-repeat;
 }
 
 #buy-membership:hover {
@@ -248,7 +248,7 @@ a img {
 
 .redeem-code {
 	position: absolute;
-	background: url(./redeem-code-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/redeem-code-button-sprite.webp) top left no-repeat;
 	width:200px;
 	height:29px;
 	display:block;
@@ -257,19 +257,19 @@ a img {
 }
 
 .de .redeem-code {
-	background: url(./de/redeem-code-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/de/redeem-code-button-sprite.webp) top left no-repeat;
 }
 
 .es .redeem-code {
-	background: url(./es/redeem-code-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/es/redeem-code-button-sprite.webp) top left no-repeat;
 }
 
 .fr .redeem-code {
-	background: url(./fr/redeem-code-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/fr/redeem-code-button-sprite.webp) top left no-repeat;
 }
 
 .pt .redeem-code {
-	background: url(./pt/redeem-code-button-sprite.webp) top left no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/pt/redeem-code-button-sprite.webp) top left no-repeat;
 }
 
 .redeem-code:hover {
@@ -295,19 +295,19 @@ a img {
 }
 
 .promo-block.promo-block-left {
-	background:url(./widget-4.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/widget-4.webp) 0 0 no-repeat;
 }
 
 .promo-block.audio {
-	background:url(./widget-1.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/widget-1.webp) 0 0 no-repeat;
 }
 
 .promo-block.video {
-	background:url(./widget-2.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/widget-2.webp) 0 0 no-repeat;
 }
 
 .promo-block.gift, .promo-block.promo-block-right {
-	background:url(./widget-6.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/widget-6.webp) 0 0 no-repeat;
 }
 
 #music-player {
@@ -321,26 +321,26 @@ a img {
 	text-indent:-9999px;
 	width:116px;
 	height:40px;
-	background:url(./btn-itunes-stacked.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/btn-itunes-stacked.webp) 0 0 no-repeat;
 	position:absolute;
 	left: 240px;
 	top: 65px;
 }
 
 .de .download-from-itunes {
-	background:url(./de/btn-itunes-stacked.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/de/btn-itunes-stacked.webp) 0 0 no-repeat;
 }
 
 .es .download-from-itunes {
-	background:url(./es/btn-itunes-stacked.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/es/btn-itunes-stacked.webp) 0 0 no-repeat;
 }
 
 .pt .download-from-itunes {
-	background:url(./pt/btn-itunes-stacked.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/pt/btn-itunes-stacked.webp) 0 0 no-repeat;
 }
 
 .fr .download-from-itunes {
-	background:url(./fr/btn-itunes-stacked.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/fr/btn-itunes-stacked.webp) 0 0 no-repeat;
 }
 
 .download-from-itunes:hover {
@@ -358,11 +358,11 @@ a img {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  background:url(./promo-callout-blue.webp) 0 0 no-repeat;
+  background:url(https://files2.waddlegames.tk/cpvirtual/promo-callout-blue.webp) 0 0 no-repeat;
 }
 
 .promo-block-right .promo-callout-large, .promo-block-left .promo-callout-large {
-  background:url(./promo-callout-blue-large.webp) 0 0 no-repeat;
+  background:url(https://files2.waddlegames.tk/cpvirtual/promo-callout-blue-large.webp) 0 0 no-repeat;
   padding: 0 0 3px 5px;
   width: 120px;
 }
@@ -417,7 +417,7 @@ a img {
 	color:#fff;
 	padding-right:20px;
 	margin-bottom: 5px;
-	background:url(./arrow-right.webp) center right no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/arrow-right.webp) center right no-repeat;
 }
 .promo-block-right .promo-image, .promo-block-left .promo-image {
     bottom: 12px;
@@ -435,7 +435,7 @@ a img {
 	position:absolute;
 	top:10px;
 	left:15px;
-	background:url(./album-artwork.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/album-artwork.webp) 0 0 no-repeat;
 }
 
 #video-2 {
@@ -444,7 +444,7 @@ a img {
 	position:absolute;
 	left:10px;
 	top:8px;
-	background:url(./thumb-video-2.webp) 0 0 no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/thumb-video-2.webp) 0 0 no-repeat;
 }
 
 .song-info .title {
@@ -486,7 +486,7 @@ a img {
 	height:127px;
 	left:10px;
 	top:8px;
-	background:url(./gift-thumbnail.webp);
+	background:url(https://files2.waddlegames.tk/cpvirtual/gift-thumbnail.webp);
 
 }
 
@@ -496,7 +496,7 @@ a img {
 	top:0px;
 	width:215px;
 	height:140px;
-	background:url(./video-thumbnail.webp);
+	background:url(https://files2.waddlegames.tk/cpvirtual/video-thumbnail.webp);
 }
 
 .trigger-video {
@@ -536,7 +536,7 @@ a img {
 	background:#f00;
 	display:block;
 	padding-right:20px;
-	background:url(./arrow-right.webp) center right no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/arrow-right.webp) center right no-repeat;
 }
 
 .gift .cta:hover,
@@ -546,7 +546,7 @@ a img {
 
 
 #footer {
-	background:url(./bottom-footer.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/bottom-footer.webp) top left no-repeat;
 	width:980px;
 	height:265px;
 	color:#fff;
@@ -576,7 +576,7 @@ a img {
 #footer-logo {
 	width:100px;
 	height:75px;
-	background:url(./diw-logo.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/diw-logo.webp) top left no-repeat;
 	position:absolute;
 	left:10px;
 	top:10px;
@@ -589,7 +589,7 @@ a img {
 	float:left;
 	left: 160px;
 	top:30px;
-	background:url(./vertical-divider.webp) top right no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/vertical-divider.webp) top right no-repeat;
 }
 
 #quicklinks-title {
@@ -604,7 +604,7 @@ a img {
 	height:220px;
 	left: 360px;
 	top:30px;
-	background: url(./vertical-divider.webp) top right no-repeat;
+	background: url(https://files2.waddlegames.tk/cpvirtual/vertical-divider.webp) top right no-repeat;
 }
 
 #company-title {
@@ -662,63 +662,63 @@ a img {
 
 
 #btn-activate-card {
-	background:url(./sprite-activate-card.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/sprite-activate-card.webp) top left no-repeat;
 }
 
 .de #btn-activate-card {
-	background:url(./de/sprite-activate-card.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/de/sprite-activate-card.webp) top left no-repeat;
 }
 
 .es #btn-activate-card {
-	background:url(./es/sprite-activate-card.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/es/sprite-activate-card.webp) top left no-repeat;
 }
 
 .fr #btn-activate-card {
-	background:url(./fr/sprite-activate-card.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/fr/sprite-activate-card.webp) top left no-repeat;
 }
 
 .pt #btn-activate-card {
-	background:url(./pt/sprite-activate-card.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/pt/sprite-activate-card.webp) top left no-repeat;
 }
 
 #btn-parent-tools {
-	background:url(./sprite-parent-tools.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/sprite-parent-tools.webp) top left no-repeat;
 }
 
 .de #btn-parent-tools {
-	background:url(./de/sprite-parent-tools.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/de/sprite-parent-tools.webp) top left no-repeat;
 }
 
 .es #btn-parent-tools {
-	background:url(./es/sprite-parent-tools.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/es/sprite-parent-tools.webp) top left no-repeat;
 }
 
 .fr #btn-parent-tools {
-	background:url(./fr/sprite-parent-tools.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/fr/sprite-parent-tools.webp) top left no-repeat;
 }
 
 .pt #btn-parent-tools {
-	background:url(./pt/sprite-parent-tools.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/pt/sprite-parent-tools.webp) top left no-repeat;
 }
 
 #btn-unlock-items {
-	background:url(./sprite-unlock-items.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/sprite-unlock-items.webp) top left no-repeat;
 }
 
 .de #btn-unlock-items {
-	background:url(./de/sprite-unlock-items.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/de/sprite-unlock-items.webp) top left no-repeat;
 }
 
 .es #btn-unlock-items {
-	background:url(./es/sprite-unlock-items.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/es/sprite-unlock-items.webp) top left no-repeat;
 }
 
 .fr #btn-unlock-items {
-	background:url(./fr/sprite-unlock-items.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/fr/sprite-unlock-items.webp) top left no-repeat;
 }
 
 .pt #btn-unlock-items {
-	background:url(./pt/sprite-unlock-items.webp) top left no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/pt/sprite-unlock-items.webp) top left no-repeat;
 }
 
 #btn-activate-card:hover,
@@ -754,7 +754,7 @@ a img {
 }
 
 #language-select > div > a {
-	background:url(./sprite-select.webp) 5px 0px no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/sprite-select.webp) 5px 0px no-repeat;
 	display:block;
 	width:170px;
 	height:35px;
@@ -769,7 +769,7 @@ a img {
 	padding-left:20px;
 	height:218px;
 	z-index:10;
-	background:url(./footer-dropdown.webp) 5px -50px no-repeat;
+	background:url(https://files2.waddlegames.tk/cpvirtual/footer-dropdown.webp) 5px -50px no-repeat;
 	display: none;
 }
 
