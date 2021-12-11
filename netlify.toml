@@ -1,0 +1,20 @@
+[[redirects]]
+  from = "/*"
+  to = "https://lock.region.moonlightstudioshq.tk/sg/"
+  status = 301
+  force = true
+  conditions = {Country = ["sg"]}
+
+[[redirects]]
+  from = "/*"
+  to = "https://lock.region.moonlightstudioshq.tk/ru/"
+  status = 301
+  force = true
+  conditions = {Country = ["ru"]}
+
+[[redirects]]
+  from = "/*"
+  to = "https://lock.region.moonlightstudioshq.tk/in/"
+  status = 301
+  force = true
+  conditions = {Country = ["in"]}
